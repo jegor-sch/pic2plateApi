@@ -5,7 +5,7 @@ EXPOSE 80
 
 # Use the official .NET SDK as a build environment
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
+WORKDIR /pic2plateApi
 COPY ["pic2plateApi.csproj", "./"]
 RUN dotnet restore "./pic2plateApi.csproj"
 COPY . .
