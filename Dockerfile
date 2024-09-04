@@ -4,12 +4,12 @@ WORKDIR /app
 EXPOSE 80
 
 # Use the official .NET SDK as a build environment
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /pic2plateApi
-COPY ["pic2plateApi.csproj", "./"]
-RUN dotnet restore "./pic2plateApi.csproj"
 COPY . .
-WORKDIR "/pic2plateApi/"
+RUN dotnet restore "./pic2plateApi.csproj"
+
+WORKDIR "/pic2plateApi"
 RUN dotnet build "pic2plateApi.csproj" -c Release -o /app/build
 
 # Publish the app
