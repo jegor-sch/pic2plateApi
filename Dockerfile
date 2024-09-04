@@ -5,7 +5,7 @@ EXPOSE 80
 
 # Use the .NET SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
+WORKDIR /pic2plateApi
 
 # Copy the csproj file and restore the project dependencies
 COPY pic2plateApi.csproj ./
