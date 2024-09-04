@@ -9,7 +9,7 @@ WORKDIR /src
 COPY ["pic2plateApi.csproj", "./"]
 RUN dotnet restore "./pic2plateApi.csproj"
 COPY . .
-WORKDIR "/src/"
+WORKDIR "/pic2plateApi/"
 RUN dotnet build "pic2plateApi.csproj" -c Release -o /app/build
 
 # Publish the app
