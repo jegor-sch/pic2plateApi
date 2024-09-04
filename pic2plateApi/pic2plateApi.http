@@ -1,0 +1,6 @@
+@pic2plateApi_HostAddress = http://localhost:5187
+
+GET {{pic2plateApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
