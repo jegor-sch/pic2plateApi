@@ -17,7 +17,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins("http://localhost:1234") // Ersetze dies durch die URL deines Frontends
+        policy.WithOrigins("https://pic2plate.netlify.app")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
