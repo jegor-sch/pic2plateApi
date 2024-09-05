@@ -1,3 +1,7 @@
+using pic2plateApi.Handler;
+using pic2plateApi.Helpers;
+using pic2plateApi.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +9,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Handler
+builder.Services.AddScoped<RecipeHandler>();
+
+// Repos
+builder.Services.AddScoped<RecipeRepository>();
+
+// Helper
+builder.Services.AddScoped<SqlConnectionProvider>();
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+});
 
 var app = builder.Build();
 

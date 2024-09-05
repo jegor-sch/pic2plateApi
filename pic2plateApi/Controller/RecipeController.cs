@@ -1,9 +1,12 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using pic2plateApi.Handler;
+using pic2plateApi.Model;
 
 namespace pic2plateApi.Controller;
 
+[ApiController]
+[Route("[controller]")]
 public class RecipeController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly RecipeHandler _recipeHandler;
@@ -13,11 +16,12 @@ public class RecipeController : Microsoft.AspNetCore.Mvc.Controller
         _recipeHandler = recipeHandler;
     }
 
-    [HttpPost("")]
+    [HttpPost("{id:int}")]
     [ProducesResponseType(typeof(int), (int)HttpStatusCode.NoContent)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<IActionResult> Post([FromBody] int id)
+    public async Task<IActionResult> Post(int id,[FromBody] RecipeDto recipeDto)
     {
-        return NoContent();
+        var recipeId = await _recipeHandler.SaveRecipe(id,recipeDto);
+        return Ok(recipeId);
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pic2plateApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+154dcde56aaa283ba95cd7fcbe90b26e9dac53d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5393e75173839ae81ffcb7b0d0f8e251bb38904")]
 [assembly: System.Reflection.AssemblyProductAttribute("pic2plateApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pic2plateApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
