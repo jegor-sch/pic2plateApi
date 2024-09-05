@@ -39,4 +39,13 @@ public class PreferenceRepository
 
         return await cn.QueryFirstOrDefaultAsync<int>(query, new { personId, name });
     }
+
+    public async Task Delete(string personId)
+    {
+        const string query = "DELETE FROM preference WHERE person_Id = :personId";
+        
+        using var cn = await _sqlConnectionProvider.GetConnection();
+        
+        await cn.ExecuteAsync(query, new { personId });
+    }
 }

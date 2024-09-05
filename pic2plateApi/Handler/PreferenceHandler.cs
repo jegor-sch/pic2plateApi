@@ -24,6 +24,8 @@ public class PreferenceHandler
     {
         try
         {
+            await _preferenceRepository.Delete(dto.PersonId);
+            
             foreach (var name in dto.Names)
             {
                 await _preferenceRepository.Post(dto.PersonId, name);
