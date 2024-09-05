@@ -14,12 +14,12 @@ public class RecipeController : Microsoft.AspNetCore.Mvc.Controller
         _recipeHandler = recipeHandler;
     }
 
-    [HttpPost("")]
+    [HttpPost("{id:int}")]
     [ProducesResponseType(typeof(int), (int)HttpStatusCode.NoContent)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-    public async Task<IActionResult> Post([FromBody] RecipeDto recipeDto)
+    public async Task<IActionResult> Post(int id,[FromBody] RecipeDto recipeDto)
     {
-        var recipeId = await _recipeHandler.SaveRecipe(recipeDto);
+        var recipeId = await _recipeHandler.SaveRecipe(id,recipeDto);
         return Ok(recipeId);
     }
 }

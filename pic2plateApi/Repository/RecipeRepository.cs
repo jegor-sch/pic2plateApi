@@ -13,7 +13,7 @@ public class RecipeRepository
         _connectionProvider = connectionProvider;
     }
 
-    public async Task<int> SaveRecipe(RecipeDto recipe)
+    public async Task<int> SaveRecipe(int id,RecipeDto recipe)
     {
         const string query = """
                              INSERT INTO recipe(person_id, title, recipe)
@@ -23,6 +23,7 @@ public class RecipeRepository
 
         var param = new
         {
+            id,
             personId = recipe.PersonId,
             title = recipe.Title,
             recipe = recipe.Recipe
