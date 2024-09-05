@@ -274,5 +274,3 @@ obj/
 
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore,csharp,rider,visualstudiocode,visualstudio
 .idea/.idea.pic2plateApi/.idea/
-
-*.info
