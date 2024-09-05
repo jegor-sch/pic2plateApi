@@ -13,8 +13,8 @@ public class PreferenceHandler
         _preferenceRepository = preferenceRepository;
     }
 
-    public async Task<List<Preference>> Get()
+    public async Task<List<Preference>> Get(string personId)
     {
-        return await _preferenceRepository.Get();
+        return await _preferenceRepository.Get(personId);
     }
 }

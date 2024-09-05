@@ -15,7 +15,7 @@ public class PreferenceController : ControllerBase
         _preferenceHandler = preferenceHandler;
     }
 
-    [HttpGet()]
-    public async Task<IActionResult> Get()
-        => Ok(await _preferenceHandler.Get());
+    [HttpGet("{personId:string}")]
+    public async Task<IActionResult> Get(string personId)
+        => Ok(await _preferenceHandler.Get(personId));
 }
