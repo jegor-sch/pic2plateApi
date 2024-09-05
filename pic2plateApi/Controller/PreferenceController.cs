@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using pic2plateApi.Handler;
-
+using pic2plateApi.Model;
 namespace pic2plateApi.Controller;
 
-public class PreferenceController : Microsoft.AspNetCore.Mvc.Controller
+[ApiController]
+[Route("[controller]")]
+public class PreferenceController : ControllerBase
 {
     private readonly PreferenceHandler _preferenceHandler;
 
@@ -14,7 +17,5 @@ public class PreferenceController : Microsoft.AspNetCore.Mvc.Controller
 
     [HttpGet()]
     public async Task<IActionResult> Get()
-    {
-        return await _preferenceHandler.Get();
-    }
+        => Ok(await _preferenceHandler.Get());
 }

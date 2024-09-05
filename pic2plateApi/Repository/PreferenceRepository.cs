@@ -1,4 +1,5 @@
-﻿using pic2plateApi.Helpers;
+﻿using Dapper;
+using pic2plateApi.Helpers;
 using pic2plateApi.Model;
 
 namespace pic2plateApi.Repository;
@@ -20,6 +21,6 @@ public class PreferenceRepository
 
         using var cn = await _sqlConnectionProvider.GetConnection();
 
-        return cn;
+        return (await cn.QueryAsync<Preference>(query)).ToList();
     }
 }
