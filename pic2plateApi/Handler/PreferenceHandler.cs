@@ -17,4 +17,9 @@ public class PreferenceHandler
     {
         return await _preferenceRepository.Get(personId);
     }
+
+    public async Task<int> Post(PreferenceDto dto)
+    {
+        return await _preferenceRepository.Post(dto.PersonId, dto.Name);
+    }
 }

@@ -15,7 +15,14 @@ public class PreferenceController : ControllerBase
         _preferenceHandler = preferenceHandler;
     }
 
-    [HttpGet("{personId:string}")]
+    [HttpGet("{personId}")]
     public async Task<IActionResult> Get(string personId)
         => Ok(await _preferenceHandler.Get(personId));
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] PreferenceDto dto)
+    {
+        var newId = await _preferenceHandler.Post(dto);
+        return new ObjectResult(newId) { StatusCode = StatusCodes.Status201Created };
+    }
 }

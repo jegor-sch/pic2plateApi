@@ -12,9 +12,11 @@ builder.Services.AddSwaggerGen();
 
 //Handler
 builder.Services.AddScoped<RecipeHandler>();
+builder.Services.AddScoped<PreferenceHandler>();
 
 // Repos
 builder.Services.AddScoped<RecipeRepository>();
+builder.Services.AddScoped<PreferenceRepository>();
 
 // Helper
 builder.Services.AddScoped<SqlConnectionProvider>();

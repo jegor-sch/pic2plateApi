@@ -23,4 +23,17 @@ public class PreferenceRepository
 
         return (await cn.QueryAsync<Preference>(query,new{personId})).ToList();
     }
+
+    public async Task<int> Post(string personId, string name)
+    {
+        const string query = """
+                             INSERT INTO preference(person_id, name)
+                                    VALUES (:personId, :name)
+                                    RETURNING id;
+                             """;
+        
+        using var cn = await _sqlConnectionProvider.GetConnection();
+
+        return await cn.QueryFirstOrDefaultAsync<int>(query, new { personId, name });
+    }
 }
