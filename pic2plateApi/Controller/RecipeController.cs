@@ -5,6 +5,8 @@ using pic2plateApi.Model;
 
 namespace pic2plateApi.Controller;
 
+[ApiController]
+[Route("[controller]")]
 public class RecipeController : Microsoft.AspNetCore.Mvc.Controller
 {
     private readonly RecipeHandler _recipeHandler;
