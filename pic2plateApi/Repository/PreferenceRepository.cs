@@ -13,14 +13,27 @@ public class PreferenceRepository
         _sqlConnectionProvider = sqlConnectionProvider;
     }
 
-    public async Task<List<Preference>> Get()
+    public async Task<List<Preference>> Get(string personId)
     {
         const string query = """
-                             SELECT * FROM preference WHERE deletion_time IS NULL
+                             SELECT name FROM preference WHERE deletion_time IS NULL AND person_id = :personId
                              """;
 
         using var cn = await _sqlConnectionProvider.GetConnection();
 
-        return (await cn.QueryAsync<Preference>(query)).ToList();
+        return (await cn.QueryAsync<Preference>(query,new{personId})).ToList();
+    }
+
+    public async Task<int> Post(string personId, string name)
+    {
+        const string query = """
+                             INSERT INTO preference(person_id, name)
+                                    VALUES (:personId, :name)
+                                    RETURNING id;
+                             """;
+        
+        using var cn = await _sqlConnectionProvider.GetConnection();
+
+        return await cn.QueryFirstOrDefaultAsync<int>(query, new { personId, name });
     }
 }
