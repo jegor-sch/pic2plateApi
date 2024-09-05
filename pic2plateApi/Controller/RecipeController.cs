@@ -38,4 +38,13 @@ public class RecipeController : Microsoft.AspNetCore.Mvc.Controller
         
         return Ok(recipes);
     }
+    
+    [HttpDelete("{id:int}")]
+    [ProducesResponseType((int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    public async Task<IActionResult> Delete([FromRoute] int id)
+    {
+        await _recipeHandler.DeleteRecipe(id);
+        return Ok();
+    }
 }

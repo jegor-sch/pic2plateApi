@@ -27,4 +27,9 @@ public class RecipeHandler
 
         return recipes;
     }
+
+    public async Task DeleteRecipe(int id)
+    {
+        await _recipeRepo.Delete(id);
+    }
 }
