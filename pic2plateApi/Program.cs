@@ -48,6 +48,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowSpecificOrigins");
+
 app.MapControllers();
 
 app.UseHttpsRedirection();
