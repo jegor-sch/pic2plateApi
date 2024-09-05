@@ -9,6 +9,4 @@ public record RecipeDto
     public string Title { get; set; } = null!;
 
     public string Recipe { get; set; } = null!;
-
-    public DateTime? DeletionTime { get; set; }
 }

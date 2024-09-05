@@ -50,4 +50,16 @@ public class RecipeRepository
         var recipeList = recipes.ToList();
         return recipeList.Count > 0 ? recipeList : null;
     }
+
+    public async Task Delete(int id)
+    {
+        const string query = """
+                             UPDATE recipe
+                             SET deletion_time = NOW()
+                             WHERE id = :id;
+                             """;
+        
+        using var cn = await _connectionProvider.GetConnection();
+        await cn.ExecuteAsync(query, new { id });
+    }
 }
