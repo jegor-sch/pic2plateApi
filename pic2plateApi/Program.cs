@@ -10,6 +10,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins", policy =>
+    {
+        policy.WithOrigins("http://localhost:1234") // Ersetze dies durch die URL deines Frontends
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 //Handler
 builder.Services.AddScoped<RecipeHandler>();
 builder.Services.AddScoped<PreferenceHandler>();
