@@ -1,26 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DEV\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj": {}
+    "C:\\Users\\GTuerkmen\\Documents\\schule\\Projekt\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj": {}
   },
   "projects": {
-    "C:\\DEV\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj": {
+    "C:\\Users\\GTuerkmen\\Documents\\schule\\Projekt\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DEV\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj",
+        "projectUniqueName": "C:\\Users\\GTuerkmen\\Documents\\schule\\Projekt\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj",
         "projectName": "pic2plateApi",
-        "projectPath": "C:\\DEV\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj",
-        "packagesPath": "C:\\Users\\JSchweizer\\.nuget\\packages\\",
-        "outputPath": "C:\\DEV\\pic2plateApi\\pic2plateApi\\obj\\",
+        "projectPath": "C:\\Users\\GTuerkmen\\Documents\\schule\\Projekt\\pic2plateApi\\pic2plateApi\\pic2plateApi.csproj",
+        "packagesPath": "C:\\Users\\GTuerkmen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\GTuerkmen\\Documents\\schule\\Projekt\\pic2plateApi\\pic2plateApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JSchweizer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\GTuerkmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://labs01.tobit.ag/NuGet/nuget": {}
         },
         "frameworks": {
           "net8.0": {
@@ -79,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\JSchweizer\\.dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

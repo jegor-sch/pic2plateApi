@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using pic2plateApi.Handler;
 using pic2plateApi.Model;
@@ -23,5 +25,17 @@ public class RecipeController : Microsoft.AspNetCore.Mvc.Controller
     {
         var recipeId = await _recipeHandler.SaveRecipe(recipeDto);
         return Ok(recipeId);
+    }
+
+    [HttpGet("{personId}")]
+    [ProducesResponseType(typeof(List<Recipe>), (int)HttpStatusCode.NoContent)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    public async Task<IActionResult> Get([FromRoute] string personId)
+    {
+        var recipes = await _recipeHandler.Get(personId);
+        
+        if (recipes is null) return NoContent();
+        
+        return Ok(recipes);
     }
 }

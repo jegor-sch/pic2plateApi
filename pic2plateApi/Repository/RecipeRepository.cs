@@ -1,4 +1,7 @@
-﻿using Dapper;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Dapper;
 using pic2plateApi.Helpers;
 using pic2plateApi.Model;
 
@@ -30,5 +33,21 @@ public class RecipeRepository
         
         using var cn = await _connectionProvider.GetConnection();
         return await cn.QueryFirstOrDefaultAsync<int>(query, param);
+    }
+    
+    public async Task<List<Recipe>?> Get(string personId)
+    {
+        const string query = """
+                             SELECT id, title, recipe
+                             FROM recipe
+                             WHERE person_id = :personId
+                             AND deletion_time IS NULL;
+                             """;
+
+        using var cn = await _connectionProvider.GetConnection();
+        var recipes = await cn.QueryAsync<Recipe>(query, new { personId });
+    
+        var recipeList = recipes.ToList();
+        return recipeList.Count > 0 ? recipeList : null;
     }
 }

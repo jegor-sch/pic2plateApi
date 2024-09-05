@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using pic2plateApi.Handler;
 using pic2plateApi.Helpers;
 using pic2plateApi.Repository;

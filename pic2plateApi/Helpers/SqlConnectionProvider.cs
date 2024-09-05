@@ -1,5 +1,8 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Data;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Npgsql;
 
 namespace pic2plateApi.Helpers;

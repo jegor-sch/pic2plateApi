@@ -1,4 +1,6 @@
-﻿namespace pic2plateApi.Model;
+﻿using System.Collections.Generic;
+
+namespace pic2plateApi.Model;
 
 public record PreferenceDto
 {

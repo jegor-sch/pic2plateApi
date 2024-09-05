@@ -1,4 +1,6 @@
-﻿namespace pic2plateApi.Model;
+﻿using System;
+
+namespace pic2plateApi.Model;
 
 public record Preference
 {
