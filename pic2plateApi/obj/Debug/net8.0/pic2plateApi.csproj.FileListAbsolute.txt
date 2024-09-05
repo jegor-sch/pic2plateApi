@@ -31,3 +31,6 @@ C:\DEV\pic2plateApi\pic2plateApi\obj\Debug\net8.0\refint\pic2plateApi.dll
 C:\DEV\pic2plateApi\pic2plateApi\obj\Debug\net8.0\pic2plateApi.pdb
 C:\DEV\pic2plateApi\pic2plateApi\obj\Debug\net8.0\pic2plateApi.genruntimeconfig.cache
 C:\DEV\pic2plateApi\pic2plateApi\obj\Debug\net8.0\ref\pic2plateApi.dll
+C:\DEV\pic2plateApi\pic2plateApi\bin\Debug\net8.0\Dapper.dll
+C:\DEV\pic2plateApi\pic2plateApi\bin\Debug\net8.0\Npgsql.dll
+C:\DEV\pic2plateApi\pic2plateApi\obj\Debug\net8.0\pic2plateApi.sourcelink.json
