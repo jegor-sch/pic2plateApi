@@ -12,9 +12,9 @@ public class RecipeHandler
         _recipeRepo = recipeRepo;
     }
 
-    public async Task<int> SaveRecipe(int id ,RecipeDto recipe)
+    public async Task<int> SaveRecipe(RecipeDto recipe)
     {
-        var createdRecipeId = await _recipeRepo.SaveRecipe(id,recipe);
+        var createdRecipeId = await _recipeRepo.SaveRecipe(recipe);
 
         return createdRecipeId;
     }
