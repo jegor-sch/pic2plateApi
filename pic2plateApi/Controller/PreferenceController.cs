@@ -22,7 +22,15 @@ public class PreferenceController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] PreferenceDto dto)
     {
-        var newId = await _preferenceHandler.Post(dto);
-        return new ObjectResult(newId) { StatusCode = StatusCodes.Status201Created };
+        var status = await _preferenceHandler.Post(dto);
+        if (status == 1)
+        {
+            return new StatusCodeResult(201);
+        }
+        else
+        {
+            return new StatusCodeResult(400);
+        }
+        
     }
 }

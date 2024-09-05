@@ -5,7 +5,6 @@ namespace pic2plateApi.Handler;
 
 public class PreferenceHandler
 {
-    
     public readonly PreferenceRepository _preferenceRepository;
 
     public PreferenceHandler(PreferenceRepository preferenceRepository)
@@ -20,6 +19,18 @@ public class PreferenceHandler
 
     public async Task<int> Post(PreferenceDto dto)
     {
-        return await _preferenceRepository.Post(dto.PersonId, dto.Name);
+        try
+        {
+            foreach (var name in dto.Names)
+            {
+                await _preferenceRepository.Post(dto.PersonId, name);
+            }
+
+            return 1;
+        }
+        catch (Exception e)
+        {
+            return 0;
+        }
     }
 }
